@@ -27,3 +27,11 @@ Route::get('/raw-demo', [RawDemoController::class, 'index']);
 use App\Http\Controllers\RelationshipController;
 
 Route::get('/relationships-demo', [RelationshipController::class, 'demonstrate']);
+
+use App\Http\Controllers\EloquentController;
+
+Route::prefix('eq')->group(function () {
+    Route::get('/index', [EloquentController::class, 'index']);
+    Route::get('/store', [EloquentController::class, 'store']);
+    Route::get('/big-data', [EloquentController::class, 'bigData']);
+});
